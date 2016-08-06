@@ -29,6 +29,26 @@ public:
 	*/
 	void stopMoving();
 
+	/* void lookUp
+	The player looks up
+	*/
+	void lookUp();
+
+	/* void stopLookingUp
+	The player stops looking up
+	*/
+	void stopLookingUp();
+
+	/* void lookDown
+	The player looks down OR interacts (turns around)
+	*/
+	void lookDown();
+
+	/* void stopLookingDown
+	The player stops looking down or interacting
+	*/
+	void stopLookingDown();
+
 	/* void jump
 	Starts jumping
 	*/

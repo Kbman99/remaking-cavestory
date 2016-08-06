@@ -45,23 +45,21 @@ void Player::moveLeft() {
 	this->_dx = -player_constants::WALK_SPEED;
 	this->playAnimation("RunLeft");
 	this->_facing = LEFT;
-	//if (this->_x < -8) {
-	//	this->Player::_x = 648;
-	//}
 }
 
 void Player::moveRight() {
 	this->_dx = +player_constants::WALK_SPEED;
 	this->playAnimation("RunRight");
 	this->_facing = RIGHT;
-	//if (this->_x > 648) {
-	//	this->Player::_x = -8;
-	//}
 }
 
 void Player::stopMoving() {
 	this->_dx = 0.0f;
 	this->playAnimation(this->_facing == RIGHT ? "IdleRight" : "IdleLeft");
+}
+
+void Player::lookUp() {
+	
 }
 
 void Player::jump() {
