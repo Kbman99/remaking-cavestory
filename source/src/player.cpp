@@ -16,7 +16,9 @@ Player::Player(Graphics &graphics, Vector2 spawnPoint) :
 	_dx(0),
 	_dy(0),
 	_facing(RIGHT),
-	_grounded(false)
+	_grounded(false),
+	_lookingUp(false),
+	_lookingDown(false)
 {
 	graphics.loadImage("content/sprites/MyChar.png");
 
@@ -73,7 +75,7 @@ void Player::moveRight() {
 
 void Player::stopMoving() {
 	this->_dx = 0.0f;
-		if (this->_lookingUp == false && this->_lookingDown == false) {
+	if (this->_lookingUp == false && this->_lookingDown == false) {
 		this->playAnimation(this->_facing == RIGHT ? "IdleRight" : "IdleLeft");
 	}
 }

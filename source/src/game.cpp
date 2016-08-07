@@ -13,7 +13,7 @@ This class holds all information for our main game loop
 
 namespace {
 	const int FPS = 50;
-	const int MAX_FRAME_TIME = 5 * 1000 / FPS;
+	const int MAX_FRAME_TIME = 1000 / FPS;
 }
 Game::Game() {
 	SDL_Init(SDL_INIT_EVERYTHING);
@@ -52,6 +52,38 @@ void Game::gameLoop() {
 				return;
 			}
 		}
+		//if (input.wasKeyPressed(SDL_SCANCODE_ESCAPE) == true) {
+		//	return;
+		//}
+		//else if (input.isKeyHeld(SDL_SCANCODE_LEFT) == true) {
+		//	this->_player.moveLeft();
+		//}
+		//else if (input.isKeyHeld(SDL_SCANCODE_RIGHT) == true) {
+		//	this->_player.moveRight();
+		//}
+
+		//if (input.isKeyHeld(SDL_SCANCODE_UP) == true) {
+		//	this->_player.lookUp();
+		//}
+		//else if (input.isKeyHeld(SDL_SCANCODE_DOWN) == true) {
+		//	this->_player.lookDown();
+		//}
+
+		//if (input.wasKeyReleased(SDL_SCANCODE_UP) == true) {
+		//	this->_player.stopLookingUp();
+		//}
+		//if (input.wasKeyReleased(SDL_SCANCODE_DOWN) == true) {
+		//	this->_player.stopLookingDown();
+		//}
+
+		//if (input.wasKeyPressed(SDL_SCANCODE_Z) == true) {
+		//	this->_player.jump();
+		//}
+
+		//if (!input.isKeyHeld(SDL_SCANCODE_LEFT) && !input.isKeyHeld(SDL_SCANCODE_RIGHT)) {
+		//	this->_player.stopMoving();
+		//}
+
 		if (input.wasKeyPressed(SDL_SCANCODE_ESCAPE) == true) {
 			return;
 		}
@@ -86,6 +118,8 @@ void Game::gameLoop() {
 
 		const int CURRENT_TIME_MS = SDL_GetTicks();
 		int ELAPSED_TIME_MS = CURRENT_TIME_MS - LAST_UPDATE_TIME;
+
+
 		this->update(std::min(ELAPSED_TIME_MS, MAX_FRAME_TIME));
 		LAST_UPDATE_TIME = CURRENT_TIME_MS;
 

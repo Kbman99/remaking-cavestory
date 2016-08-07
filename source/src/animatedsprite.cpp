@@ -60,7 +60,7 @@ void AnimatedSprite::update(int elapsedTime) {
 	this->_timeElapsed += elapsedTime;
 	if (this->_timeElapsed > this->_timeToUpdate) {
 		this->_timeElapsed -= this->_timeToUpdate;
-		if ((unsigned)_frameIndex < this->_animations[this->_currentAnimation].size() - 1) {
+		if (this->_frameIndex < this->_animations[this->_currentAnimation].size() - 1) {
 			this->_frameIndex++;
 		}
 		else {
