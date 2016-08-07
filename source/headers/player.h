@@ -68,6 +68,9 @@ private:
 	Direction _facing;
 
 	bool _grounded;
+
+	bool _lookingUp;
+	bool _lookingDown;
 };
 
 #endif
