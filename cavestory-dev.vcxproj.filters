@@ -57,6 +57,12 @@
     <ClInclude Include="source\headers\utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\headers\hud.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\headers\door.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\src\animatedsprite.cpp">
@@ -90,6 +96,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\src\tinyxml2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\src\hud.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
