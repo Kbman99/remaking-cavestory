@@ -17,7 +17,7 @@ private:
 	Player _player;
 
 	Sprite _healthBarSprite;
-	Sprite _healNumber1;
+	Sprite _healthNumber1;
 
 };
 
