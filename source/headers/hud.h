@@ -15,20 +15,10 @@ public:
 
 private:
 	Player _player;
-	
-	//Health Sprites
+
 	Sprite _healthBarSprite;
 	Sprite _healthNumber1;
-	Sprite _currentHealthBar;
 
-	//Exp Sprites
-	Sprite _lvWord;
-	Sprite _lvNumber;
-	Sprite _expBar;
-
-	//Weapon info
-	Sprite _slash;
-	Sprite _dashes;
 };
 
 #endif
