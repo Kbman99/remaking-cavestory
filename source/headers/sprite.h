@@ -3,12 +3,12 @@
 
 #include <SDL.h>
 
+#include <string>
+
 #include "rectangle.h"
 #include "globals.h"
 
 class Graphics;
-
-#include <string>
 
 /* Sprite class
 Holds all information for individual sprites
@@ -26,13 +26,14 @@ public:
 	const Rectangle getBoundingBox() const;
 	const sides::Side getCollisionSide(Rectangle &other) const;
 
-	const inline float getX() { return this->_x; }
-	const inline float getY() { return this->_y; }
+	const inline float getX() const { return this->_x; }
+	const inline float getY() const { return this->_y; }
 
 	void setSourceRectX(int value);
 	void setSourceRectY(int value);
 	void setSourceRectW(int value);
 	void setSourceRectH(int value);
+
 protected:
 	SDL_Rect _sourceRect;
 	SDL_Texture* _spriteSheet;

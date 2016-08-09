@@ -4,6 +4,7 @@
 #include "globals.h"
 #include "animatedsprite.h"
 #include "slope.h"
+#include "level.h"
 
 class Graphics;
 
@@ -57,8 +58,9 @@ public:
 	virtual void animationDone(std::string currentAnimation);
 	virtual void setupAnimations();
 
-	void handleTileCollision(std::vector<Rectangle> &others);
-	void handleSlopeCollision(std::vector<Slope> &others);
+	void handleTileCollisions(std::vector<Rectangle> &others);
+	void handleSlopeCollisions(std::vector<Slope> &others);
+	void handleDoorCollision(std::vector<Door> &others, Level &level, Graphics &graphics);
 
 	const float getX() const;
 	const float getY() const;

@@ -122,7 +122,7 @@ void Player::jump() {
 /* void handTileCollisions
 Handles collisions with ALL tiles the player is colliding with
 */
-void Player::handleTileCollision(std::vector<Rectangle> &others) {
+void Player::handleTileCollisions(std::vector<Rectangle> &others) {
 	//Figure out what side the collision happened on and move the player accordingly
 	for (int i = 0; i < others.size(); i++) {
 		sides::Side collisionSide = Sprite::getCollisionSide(others.at(i));
@@ -155,7 +155,7 @@ void Player::handleTileCollision(std::vector<Rectangle> &others) {
 /* void handleSlopeCollisions
 Handles collisions with ALL slopes the player is colliding with
 */
-void Player::handleSlopeCollision(std::vector<Slope> &others) {
+void Player::handleSlopeCollisions(std::vector<Slope> &others) {
 	for (int i = 0; i < others.size(); i++) {
 		//Calculate where on the slope the player's bottom is toucher
 		//and use y=mx+b to figure out the y position to place him at
@@ -173,6 +173,22 @@ void Player::handleSlopeCollision(std::vector<Slope> &others) {
 		if (this->_grounded) {
 			this->_y = newY - this->_boundingBox.getHeight();
 			this->_grounded = true;
+		}
+	}
+}
+
+/* void handleDoorCollision
+Handles collision with door on current map
+*/
+void Player::handleDoorCollision(std::vector<Door> &others, Level &level, Graphics &graphics) {
+	//Check if the player is grounded and holding the down arrow
+	//If so, go through the door
+	//If not, do nothing
+	for (int i = 0; i < others.size(); i++) {
+		if (this->_grounded == true && this->_lookingDown == true) {
+			level = Level(others.at(i).getDestination(), graphics);
+			this->_x = level.getPlayerSpawnPoint().x;
+			this->_y = level.getPlayerSpawnPoint().y;
 		}
 	}
 }
