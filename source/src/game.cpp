@@ -1,20 +1,20 @@
 #include <SDL.h>
-#include <SDL_image.h>
 #include <algorithm>
 
 #include "game.h"
 #include "graphics.h"
 #include "input.h"
 
-/* Game class
-This class holds all information for our main game loop
-*/
 
+/* Game class
+* This class holds all information for our main game loop
+*/
 
 namespace {
 	const int FPS = 50;
 	const int MAX_FRAME_TIME = 1000 / FPS;
 }
+
 Game::Game() {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	this->gameLoop();
@@ -99,7 +99,7 @@ void Game::draw(Graphics &graphics) {
 
 	this->_level.draw(graphics);
 	this->_player.draw(graphics);
-	
+
 	this->_hud.draw(graphics);
 
 	graphics.flip();

@@ -1,11 +1,11 @@
 #ifndef LEVEL_H
 #define LEVEL_H
 
-#include <vector>
 #include <string>
+#include <vector>
 
-#include "tile.h"
 #include "globals.h"
+#include "tile.h"
 #include "rectangle.h"
 #include "slope.h"
 #include "animatedtile.h"
@@ -39,26 +39,25 @@ private:
 	Vector2 _tileSize;
 
 	SDL_Texture* _backgroundTexture;
-	
+
 	std::vector<Tile> _tileList;
 	std::vector<Tileset> _tilesets;
 	std::vector<Rectangle> _collisionRects;
 	std::vector<Slope> _slopes;
-	
+
 	std::vector<AnimatedTile> _animatedTileList;
 	std::vector<AnimatedTileInfo> _animatedTileInfos;
 
 	std::vector<Door> _doorList;
 
 	/* void loadMap
-	Loads a map
+	* Loads a map
 	*/
 	void loadMap(std::string mapName, Graphics &graphics);
 
 	Vector2 getTilesetPosition(Tileset tls, int gid, int tileWidth, int tileHeight);
 
 };
-
 
 //Tileset structure
 struct Tileset {
@@ -72,5 +71,8 @@ struct Tileset {
 		this->FirstGid = firstGid;
 	}
 };
+
+
+
 
 #endif
