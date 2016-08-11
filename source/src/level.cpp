@@ -6,10 +6,12 @@
 #include "tinyxml2.h"
 
 #include <SDL.h>
+#include "SDL_image.h"
 
 #include <sstream>
 #include <algorithm>
 #include <cmath>
+#include <iostream>
 
 using namespace tinyxml2;
 
@@ -53,9 +55,9 @@ void Level::loadMap(std::string mapName, Graphics &graphics) {
 		while (pTileset) {
 			int firstgid;
 			const char* source = pTileset->FirstChildElement("image")->Attribute("source");
-			char* path;
 			std::stringstream ss;
 			ss << source;
+			std::cout << std::endl << ss.str();
 			pTileset->QueryIntAttribute("firstgid", &firstgid);
 			SDL_Texture* tex = SDL_CreateTextureFromSurface(graphics.getRenderer(), graphics.loadImage(ss.str()));
 			this->_tilesets.push_back(Tileset(tex, firstgid));

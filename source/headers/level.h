@@ -73,6 +73,4 @@ struct Tileset {
 };
 
 
-
-
 #endif

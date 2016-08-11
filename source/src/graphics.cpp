@@ -3,6 +3,7 @@
 
 #include "graphics.h"
 #include "globals.h"
+#include <iostream>
 
 /* Graphics class
 Holds all information dealing with graphics for the game
@@ -21,6 +22,9 @@ Graphics::~Graphics() {
 SDL_Surface* Graphics::loadImage(const std::string &filePath) {
 	if (this->_spriteSheets.count(filePath) == 0) {
 		this->_spriteSheets[filePath] = IMG_Load(filePath.c_str());
+		if (this->_spriteSheets[filePath] == NULL) {
+			std::cout << "Unable to load image " << filePath.c_str() << std::endl << "Error: " << SDL_GetError() << std::endl;
+		}
 	}
 	return this->_spriteSheets[filePath];
 }
