@@ -30,4 +30,10 @@ void HUD::update(int elapsedTime, Player &player) {
 void HUD::draw(Graphics &graphics) {
 	this->_healthBarSprite.draw(graphics, this->_healthBarSprite.getX(), this->_healthBarSprite.getY());
 	this->_healthNumber1.draw(graphics, this->_healthNumber1.getX(), this->_healthNumber1.getY());
+	this->_currentHealthBar.draw(graphics, this->_currentHealthBar.getX(), this->_currentHealthBar.getY());
+	this->_lvWord.draw(graphics, this->_lvWord.getX(), this->_lvWord.getY());
+	this->_lvNumber.draw(graphics, this->_lvNumber.getX(), this->_lvNumber.getY());
+	this->_expBar.draw(graphics, this->_expBar.getX(), this->_expBar.getY());
+	this->_slash.draw(graphics, this->_slash.getX(), this->_slash.getY());
+	this->_dashes.draw(graphics, this->_dashes.getX(), this->_dashes.getY());
 }
